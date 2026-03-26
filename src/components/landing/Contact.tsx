@@ -53,7 +53,9 @@ const Contact = () => {
                 <Mail className="text-primary shrink-0" size={24} />
                 <div>
                   <p className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-1">Email</p>
-                  <p className="font-body text-lg text-foreground group-hover:text-primary transition-colors">{EMAIL}</p>
+                  <p className="font-body text-lg text-foreground group-hover:text-primary transition-colors">
+                    {EMAIL}
+                  </p>
                 </div>
               </a>
 
@@ -66,7 +68,9 @@ const Contact = () => {
                 <Phone className="text-secondary shrink-0" size={24} />
                 <div>
                   <p className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-1">Teléfono</p>
-                  <p className="font-body text-lg text-foreground group-hover:text-secondary transition-colors">{PHONE_NUMBER}</p>
+                  <p className="font-body text-lg text-foreground group-hover:text-secondary transition-colors">
+                    {PHONE_NUMBER}
+                  </p>
                 </div>
               </a>
 
@@ -81,18 +85,15 @@ const Contact = () => {
                 <MessageCircle className="text-accent shrink-0" size={24} />
                 <div>
                   <p className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-1">WhatsApp</p>
-                  <p className="font-body text-lg text-foreground group-hover:text-accent transition-colors">Abrir chat directo</p>
+                  <p className="font-body text-lg text-foreground group-hover:text-accent transition-colors">
+                    Abrir chat directo
+                  </p>
                 </div>
               </a>
             </div>
           </motion.div>
-
-        /*  {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+          /* {/* Contact Form */}
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <form onSubmit={handleSubmit} className="border border-secondary/20 p-8 bg-card/50 space-y-5">
               <div>
                 <label className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-2 block">
@@ -137,10 +138,11 @@ const Contact = () => {
               </Button>
             </form>
           </motion.div>
+          */
         </div>
       </div>
     </section>
-  );*/
+  );
 };
 
 export default Contact;
