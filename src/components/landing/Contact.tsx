@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 
-const PHONE_NUMBER = "+549 11 25047228";
+const PHONE_NUMBER = "+54 11 25047228";
 const EMAIL = "xo.alt999@proton.me";
 
 const Contact = () => {
