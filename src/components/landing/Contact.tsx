@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 
-const PHONE_NUMBER = "+5491100000000";
+const PHONE_NUMBER = "+549 11 25047228";
 const EMAIL = "xo.alt999@proton.me";
 
 const Contact = () => {
@@ -31,9 +31,7 @@ const Contact = () => {
           >
             <Mail className="text-primary" size={32} />
             <h3 className="font-display text-xl font-bold text-primary">Email</h3>
-            <p className="font-body text-muted-foreground group-hover:text-foreground transition-colors">
-              {EMAIL}
-            </p>
+            <p className="font-body text-muted-foreground group-hover:text-foreground transition-colors">{EMAIL}</p>
           </motion.a>
 
           <motion.a
