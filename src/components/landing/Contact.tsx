@@ -20,55 +20,53 @@ const Contact = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-xl mx-auto">
-          <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <motion.a
+            href={`mailto:${EMAIL}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ delay: 0 }}
+            className="flex flex-col items-start gap-4 border border-primary/20 p-8 bg-card/50 hover:border-primary/60 transition-colors group"
           >
-            <div className="space-y-4">
-              <a
-                href={`mailto:${EMAIL}`}
-                className="flex items-center gap-4 border border-primary/20 p-6 bg-card/50 text-muted-foreground hover:text-primary transition-colors group"
-              >
-                <Mail className="text-primary shrink-0" size={24} />
-                <div>
-                  <p className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-1">Email</p>
-                  <p className="font-body text-lg text-foreground group-hover:text-primary transition-colors">
-                    {EMAIL}
-                  </p>
-                </div>
-              </a>
+            <Mail className="text-primary" size={32} />
+            <h3 className="font-display text-xl font-bold text-primary">Email</h3>
+            <p className="font-body text-muted-foreground group-hover:text-foreground transition-colors">
+              {EMAIL}
+            </p>
+          </motion.a>
 
-              <a
-                href={`tel:${PHONE_NUMBER}`}
-                className="flex items-center gap-4 border border-secondary/20 p-6 bg-card/50 text-muted-foreground hover:text-secondary transition-colors group"
-              >
-                <Phone className="text-secondary shrink-0" size={24} />
-                <div>
-                  <p className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-1">Teléfono</p>
-                  <p className="font-body text-lg text-foreground group-hover:text-secondary transition-colors">
-                    {PHONE_NUMBER}
-                  </p>
-                </div>
-              </a>
+          <motion.a
+            href={`tel:${PHONE_NUMBER}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="flex flex-col items-start gap-4 border border-secondary/20 p-8 bg-card/50 hover:border-secondary/60 transition-colors group"
+          >
+            <Phone className="text-secondary" size={32} />
+            <h3 className="font-display text-xl font-bold text-secondary">Teléfono</h3>
+            <p className="font-body text-muted-foreground group-hover:text-foreground transition-colors">
+              {PHONE_NUMBER}
+            </p>
+          </motion.a>
 
-              <a
-                href={`https://wa.me/${PHONE_NUMBER.replace("+", "")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 border border-accent/20 p-6 bg-card/50 text-muted-foreground hover:text-accent transition-colors group"
-              >
-                <MessageCircle className="text-accent shrink-0" size={24} />
-                <div>
-                  <p className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-1">WhatsApp</p>
-                  <p className="font-body text-lg text-foreground group-hover:text-accent transition-colors">
-                    Abrir chat directo
-                  </p>
-                </div>
-              </a>
-            </div>
-          </motion.div>
+          <motion.a
+            href={`https://wa.me/${PHONE_NUMBER.replace("+", "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col items-start gap-4 border border-accent/20 p-8 bg-card/50 hover:border-accent/60 transition-colors group"
+          >
+            <MessageCircle className="text-accent" size={32} />
+            <h3 className="font-display text-xl font-bold text-accent">WhatsApp</h3>
+            <p className="font-body text-muted-foreground group-hover:text-foreground transition-colors">
+              Abrir chat directo
+            </p>
+          </motion.a>
         </div>
       </div>
     </section>
