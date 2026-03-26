@@ -87,7 +87,7 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+        /*  {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -140,7 +140,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
+  );*/
 };
 
 export default Contact;
