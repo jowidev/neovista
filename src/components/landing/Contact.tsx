@@ -92,7 +92,7 @@ const Contact = () => {
               </a>
             </div>
           </motion.div>
-          /* {/* Contact Form */}
+          {/* Contact Form */}
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <form onSubmit={handleSubmit} className="border border-secondary/20 p-8 bg-card/50 space-y-5">
               <div>
@@ -138,7 +138,6 @@ const Contact = () => {
               </Button>
             </form>
           </motion.div>
-          */
         </div>
       </div>
     </section>
