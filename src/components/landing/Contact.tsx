@@ -50,7 +50,7 @@ const Contact = () => {
           </motion.a>
 
           <motion.a
-            href={`https://wa.me/${PHONE_NUMBER.replace("+", "")}`}
+            href={`https://web.whatsapp.com/send/?phone=+54&1125047228&text=MESSAGE`}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
