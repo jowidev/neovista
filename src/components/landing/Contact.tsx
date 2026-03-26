@@ -26,10 +26,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="border border-primary/20 p-8 bg-card/50 space-y-6">
+            <div className="space-y-4">
               <a
                 href={`mailto:${EMAIL}`}
-                className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                className="flex items-center gap-4 border border-primary/20 p-6 bg-card/50 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <Mail className="text-primary shrink-0" size={24} />
                 <div>
@@ -40,11 +40,9 @@ const Contact = () => {
                 </div>
               </a>
 
-              <div className="h-px bg-border" />
-
               <a
                 href={`tel:${PHONE_NUMBER}`}
-                className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors group"
+                className="flex items-center gap-4 border border-secondary/20 p-6 bg-card/50 text-muted-foreground hover:text-secondary transition-colors group"
               >
                 <Phone className="text-secondary shrink-0" size={24} />
                 <div>
@@ -55,13 +53,11 @@ const Contact = () => {
                 </div>
               </a>
 
-              <div className="h-px bg-border" />
-
               <a
                 href={`https://wa.me/${PHONE_NUMBER.replace("+", "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 text-muted-foreground hover:text-accent transition-colors group"
+                className="flex items-center gap-4 border border-accent/20 p-6 bg-card/50 text-muted-foreground hover:text-accent transition-colors group"
               >
                 <MessageCircle className="text-accent shrink-0" size={24} />
                 <div>
