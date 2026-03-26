@@ -20,7 +20,7 @@ const Hero = () => {
           </p>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-primary text-glow mb-6 leading-tight">
-            N<span className="text-secondary text-glow-cyan">V</span>
+            NEO<span className="text-secondary text-glow-cyan">VISTA</span>
           </h1>
 
           <div className="w-24 h-[2px] bg-accent mx-auto mb-6" />
