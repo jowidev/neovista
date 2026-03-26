@@ -37,13 +37,11 @@ const Contact = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Contact Info */}
+        <div className="max-w-xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
           >
             <div className="border border-primary/20 p-8 bg-card/50 space-y-6">
               <a
@@ -92,54 +90,7 @@ const Contact = () => {
               </a>
             </div>
           </motion.div>
-          {/* Contact Form */}
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <form onSubmit={handleSubmit} className="border border-secondary/20 p-8 bg-card/50 space-y-5">
-              <div>
-                <label className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-2 block">
-                  Nombre
-                </label>
-                <Input
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="bg-muted border-border font-body text-lg focus:border-primary"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              <div>
-                <label className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-2 block">
-                  Email
-                </label>
-                <Input
-                  required
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="bg-muted border-border font-body text-lg focus:border-primary"
-                  placeholder="tu@email.com"
-                />
-              </div>
-              <div>
-                <label className="font-display text-xs uppercase tracking-widest text-muted-foreground mb-2 block">
-                  Mensaje
-                </label>
-                <Textarea
-                  required
-                  value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="bg-muted border-border font-body text-lg focus:border-primary min-h-[120px]"
-                  placeholder="Contanos sobre tu proyecto..."
-                />
-              </div>
-              <Button type="submit" size="lg" className="w-full text-lg py-6 gap-2">
-                <Send size={18} />
-                Enviar Mensaje
-              </Button>
-            </form>
-          </motion.div>
         </div>
-      </div>
     </section>
   );
 };
