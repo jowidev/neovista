@@ -1,27 +1,10 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MessageCircle, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 const PHONE_NUMBER = "+5491100000000";
 const EMAIL = "xo.alt999@proton.me";
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Te responderemos lo antes posible.",
-    });
-    setForm({ name: "", email: "", message: "" });
-  };
-
   return (
     <section id="contacto" className="py-24 relative">
       <div className="container mx-auto px-6">
@@ -91,6 +74,7 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
+      </div>
     </section>
   );
 };
