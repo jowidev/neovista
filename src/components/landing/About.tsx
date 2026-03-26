@@ -18,14 +18,14 @@ const About = () => {
 
           <div className="border border-primary/20 p-8 md:p-12 bg-card/50 backdrop-blur-sm">
             <p className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed mb-6">
-              En <span className="text-primary font-semibold">Neovista</span> transformamos ideas en experiencias digitales que impactan.
-              Desde Buenos Aires para el mundo, creamos landing pages con un enfoque obsesivo en el detalle,
-              la conversión y el diseño que rompe esquemas. No hacemos sitios genéricos — hacemos presencias digitales
-              que dejan huella.
+              En <span className="text-primary font-semibold">Neovista</span> transformamos ideas en experiencias
+              digitales que impactan. Desde Buenos Aires para el mundo, creamos landing pages con un enfoque obsesivo en
+              el detalle, la conversión y el diseño que rompe esquemas. No hacemos sitios genéricos — hacemos presencias
+              digitales que dejan huella.
             </p>
             <div className="w-16 h-[2px] bg-accent mx-auto mb-4" />
             <p className="text-secondary font-display text-sm tracking-widest uppercase text-glow-cyan">
-              Hecho por Jowi, técnico informático
+              Hecho por Jowidev, técnico informático
             </p>
           </div>
         </motion.div>
