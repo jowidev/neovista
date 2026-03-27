@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+// ✅ NUEVO: Links de navegación centralizados
 const links = [
   { label: "Servicios", href: "#servicios" },
   { label: "Nosotros", href: "#nosotros" },
@@ -17,10 +18,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="font-display text-lg font-bold">
-          <span className="text-primary">NEO</span><span className="text-secondary">VISTA</span>
+        {/* ✅ NUEVO: Logo con tipografía serif premium */}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="font-display text-xl font-bold tracking-tight text-foreground"
+        >
+          Neovista<span className="text-accent">.</span>
         </button>
 
         {/* Desktop */}
@@ -29,7 +34,7 @@ const Navbar = () => {
             <button
               key={l.href}
               onClick={() => scrollTo(l.href)}
-              className="font-display text-xs uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
+              className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
             </button>
@@ -44,12 +49,12 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-6 space-y-4">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/50 px-6 pb-6 space-y-4">
           {links.map((l) => (
             <button
               key={l.href}
               onClick={() => scrollTo(l.href)}
-              className="block font-display text-sm uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
+              className="block font-body text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
             </button>

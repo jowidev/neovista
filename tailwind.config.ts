@@ -13,9 +13,10 @@ export default {
       },
     },
     extend: {
+      // ✅ NUEVO: Tipografías premium
       fontFamily: {
-        display: ["Orbitron", "sans-serif"],
-        body: ["Rajdhani", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+        body: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,12 +52,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cyber: {
-          cyan: "hsl(var(--cyber-cyan))",
-          pink: "hsl(var(--cyber-pink))",
-          dark: "hsl(var(--cyber-dark))",
-          surface: "hsl(var(--cyber-surface))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,24 +67,10 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.6" },
-        },
-        "flicker": {
-          "0%, 100%": { opacity: "1" },
-          "92%": { opacity: "1" },
-          "93%": { opacity: "0.3" },
-          "94%": { opacity: "1" },
-          "96%": { opacity: "0.8" },
-          "97%": { opacity: "1" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "flicker": "flicker 4s linear infinite",
       },
     },
   },
