@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+/* ✅ NUEVO: Tipografía premium — Inter (cuerpo) + Playfair Display (display) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,44 +7,40 @@
 
 @layer base {
   :root {
-    --background: 240 20% 4%;
-    --foreground: 60 100% 95%;
+    /* ✅ NUEVO: Paleta sobria premium — negros profundos, blancos puros, acento sutil */
+    --background: 220 14% 4%;
+    --foreground: 0 0% 95%;
 
-    --card: 240 15% 8%;
-    --card-foreground: 60 100% 95%;
+    --card: 220 14% 7%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 240 15% 8%;
-    --popover-foreground: 60 100% 95%;
+    --popover: 220 14% 7%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 54 97% 56%;
-    --primary-foreground: 240 20% 4%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 220 14% 4%;
 
-    --secondary: 186 100% 50%;
-    --secondary-foreground: 240 20% 4%;
+    --secondary: 220 10% 16%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 240 10% 14%;
-    --muted-foreground: 240 5% 55%;
+    --muted: 220 10% 12%;
+    --muted-foreground: 220 5% 50%;
 
-    --accent: 345 100% 50%;
-    --accent-foreground: 60 100% 95%;
+    /* ✅ NUEVO: Acento azul sutil — profesional y confiable */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 18%;
-    --input: 240 10% 14%;
-    --ring: 54 97% 56%;
+    --border: 220 10% 14%;
+    --input: 220 10% 12%;
+    --ring: 217 91% 60%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    --neon-glow: 54 97% 56%;
-    --cyber-cyan: 186 100% 50%;
-    --cyber-pink: 345 100% 50%;
-    --cyber-dark: 240 20% 6%;
-    --cyber-surface: 240 15% 10%;
-
-    --font-display: 'Orbitron', sans-serif;
-    --font-body: 'Rajdhani', sans-serif;
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
   }
 }
 
@@ -53,7 +50,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
   }
 
@@ -63,40 +60,15 @@
 }
 
 @layer utilities {
-  .text-glow {
-    text-shadow: 0 0 10px hsl(var(--neon-glow) / 0.6), 0 0 30px hsl(var(--neon-glow) / 0.3);
+  /* ✅ NUEVO: Utilidades sutiles para la estética premium */
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 98%), hsl(217 91% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  .text-glow-cyan {
-    text-shadow: 0 0 10px hsl(var(--cyber-cyan) / 0.6), 0 0 30px hsl(var(--cyber-cyan) / 0.3);
-  }
-
-  .text-glow-pink {
-    text-shadow: 0 0 10px hsl(var(--cyber-pink) / 0.6), 0 0 30px hsl(var(--cyber-pink) / 0.3);
-  }
-
-  .border-glow {
-    box-shadow: 0 0 8px hsl(var(--neon-glow) / 0.3), inset 0 0 8px hsl(var(--neon-glow) / 0.1);
-  }
-
-  .border-glow-cyan {
-    box-shadow: 0 0 8px hsl(var(--cyber-cyan) / 0.3), inset 0 0 8px hsl(var(--cyber-cyan) / 0.1);
-  }
-
-  .bg-grid {
-    background-image:
-      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .scanline {
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      hsl(var(--neon-glow) / 0.02) 2px,
-      hsl(var(--neon-glow) / 0.02) 4px
-    );
+  .border-subtle {
+    border-color: hsl(220 10% 14% / 0.8);
   }
 }

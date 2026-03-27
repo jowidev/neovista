@@ -1,64 +1,56 @@
 import { motion } from "framer-motion";
 import { Globe, Server, Sparkles } from "lucide-react";
+import type { Service } from "@/types/data";
+import servicesData from "@/data/services.json";
 
-const services = [
-  {
-    icon: Globe,
-    title: "Landing Pages",
-    description: "Diseñamos páginas de aterrizaje optimizadas para captar contactos y generar conversiones reales para tu negocio.",
-    color: "primary" as const,
-  },
-  {
-    icon: Server,
-    title: "Hosting Web",
-    description: "Alojamos tu landing page en servidores rápidos y seguros para que esté siempre disponible, sin complicaciones técnicas.",
-    color: "secondary" as const,
-  },
-  {
-    icon: Sparkles,
-    title: "Próximamente",
-    description: "Estamos preparando nuevos servicios para potenciar tu presencia digital. Mantenete atento a las novedades.",
-    color: "accent" as const,
-  },
-];
-
-const colorClasses = {
-  primary: { border: "border-primary/30 hover:border-primary", text: "text-primary", glow: "text-glow" },
-  secondary: { border: "border-secondary/30 hover:border-secondary", text: "text-secondary", glow: "text-glow-cyan" },
-  accent: { border: "border-accent/30 hover:border-accent", text: "text-accent", glow: "text-glow-pink" },
+// ✅ NUEVO: Mapa de iconos para resolver el string del JSON a un componente React
+const iconMap: Record<string, typeof Globe> = {
+  Globe,
+  Server,
+  Sparkles,
 };
+
+// ✅ NUEVO: Cast tipado del JSON importado
+const services: Service[] = servicesData as Service[];
 
 const Services = () => {
   return (
-    <section id="servicios" className="py-24 relative">
+    <section id="servicios" className="py-32 relative">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="font-display text-sm tracking-[0.3em] uppercase text-secondary mb-2">// Qué hacemos</p>
+          <p className="font-body text-sm tracking-[0.25em] uppercase text-muted-foreground mb-3">
+            Lo que hacemos
+          </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
-            Nuestros <span className="text-primary text-glow">Servicios</span>
+            Nuestros Servicios
           </h2>
         </motion.div>
 
+        {/* ✅ NUEVO: Grid de servicios desde services.json */}
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {services.map((service, i) => {
-            const colors = colorClasses[service.color];
+            const Icon = iconMap[service.icon];
             return (
               <motion.div
-                key={service.title}
+                key={service.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className={`bg-card border ${colors.border} p-8 transition-all duration-300 group`}
+                transition={{ delay: i * 0.12 }}
+                className="bg-card border border-border/50 rounded-lg p-10 hover:border-accent/40 transition-all duration-300 group"
               >
-                <service.icon className={`${colors.text} ${colors.glow} mb-5`} size={40} />
-                <h3 className={`font-display text-xl font-bold ${colors.text} mb-3`}>{service.title}</h3>
-                <p className="text-muted-foreground font-body text-lg leading-relaxed">{service.description}</p>
+                {Icon && (
+                  <div className="w-12 h-12 rounded-md bg-secondary flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors">
+                    <Icon className="text-accent" size={24} />
+                  </div>
+                )}
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+                <p className="text-muted-foreground font-body text-base leading-relaxed">{service.description}</p>
               </motion.div>
             );
           })}
