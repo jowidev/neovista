@@ -4,7 +4,7 @@ import type { Service } from "@/types/data";
 import servicesData from "@/data/services.json";
 
 // ✅ NUEVO: Mapa de iconos para resolver el string del JSON a un componente React
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, typeof Globe> = {
   Globe,
   Server,
   Sparkles,
